@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Projekt AWSB - Bezpieczeństwo Aplikacji Webowych</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+
+<body>
+
+<header>
+    <h1>Witaj!</h1>
+</header>
+
+<main>
+    Cześć <span class="username" th:text="${user.username}"></span>, dziękujemy za utworzenie konta!
+
+    <p>Zeskanuj kod, aby dodać witrynę do swojej aplikacji uwierzytelniającej (np. Ms Authenticator. Będziesz potrzebował kodu do zalogowania się</p>
+        <p><img th:src="${qrCode}" alt="my img"/></p>
+    <ul>
+        <li><a href="/login">log in</a></li>
+    </ul>
+</main>
+
+<footer>
+    Projekt - Bezpieczeństwo Aplikacji Webowych
+</footer>
+
+</body>
+</html>

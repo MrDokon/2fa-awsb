@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Projekt AWSB - Bezpieczeństwo Aplikacji Webowych</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="/css/styles.css"/>
+</head>
+<body>
+
+<header>
+    <h1>Logowanie</h1>
+</header>
+
+<main>
+    <div th:if="${usermsg}">
+        <span class="info" th:text="${usermsg}"></span>
+    </div>
+    <div>
+        <form name='f' action="login" method='POST'>
+
+            <label for='username'>Nazwa użytkownika</label>
+            <input id='username' type='text' name='username' value=''>
+
+            <label for='username'>Hasło</label>
+            <input id='password' type='password' name='password'/>
+
+            <label for='auth-token'>Kod logowania z aplikacji</label>
+            <input id="auth-token" type="text" name="auth-token">
+
+            <input name="submit" type="submit" value="log in"/>
+
+        </form>
+
+        Nie masz konta? <a href="/user/registration">Zarejestruj się tutaj</a>
+
+    </div>
+</main>
+
+<footer>
+    Projekt - Bezpieczeństwo Aplikacji Webowych
+</footer>
+
+</body>
+</html>
