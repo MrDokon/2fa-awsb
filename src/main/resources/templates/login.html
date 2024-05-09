@@ -18,7 +18,7 @@
         <span class="info" th:text="${usermsg}"></span>
     </div>
     <div>
-        <form name='f' action="login" method='POST'>
+        <form name='f' action="login" method='POST' th:object="${user}">
 
             <label for='username'>Nazwa użytkownika</label>
             <input id='username' type='text' name='username' value=''>
@@ -28,8 +28,8 @@
 
             <label for='auth-token'>Kod logowania z aplikacji</label>
             <input id="auth-token" type="text" name="auth-token">
-
-            <input name="submit" type="submit" value="log in"/>
+            <input name="submit" type="submit" value="Zaloguj się"/>
+            <p class="error" th:if="${loginError}" th:text="${loginError}"></p>
 
         </form>
 

@@ -16,28 +16,24 @@
 <main>
 
     <div th:if="${user}">
-        <p>
-            Cześć, <span class="username" th:text="${user.name}"></span>. Wybierz jedną z opcji:
-        </p>
-        <p>
-            <ul>
-                <li><a href="/user/home">Twoja strona domowa</a></li>
-                <li><a href="/logout">Wyloguj</a></li>
-            </ul>
-        </p>
+        <div class="container">
+           <h2>Cześć <span class="username" th:text="${user.name}">
+           </span>. Wybierz jedną z opcji:</h2>
+            <div class="buttons">
+                <a href="/user/home" class="button">Twoja strona domowa</a>
+                <a href="/logout" class="button">Wyloguj</a>
+            </div>
+        </div>
     </div>
 
     <div th:unless="${user}">
-        <p>
-            Cześć,
-        </p>
-        <p>
-            Musisz być zalogowany, aby używać tej strony.
-        </p>
-        <ul>
-            <li><a href="/user/registration">rejestracja</a></li>
-            <li><a href="/login">logowanie</a></li>
-        </ul>
+        <div class="container">
+            <h2>Aby korzystać z naszej strony, musisz być zalogowany.</h2>
+            <div class="buttons">
+                <a href="/user/registration" class="button">Rejestracja</a>
+                <a href="/login" class="button">Logowanie</a>
+            </div>
+        </div>
     </div>
 
 </main>

@@ -9,10 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -52,7 +49,7 @@ public class WebController {
         } catch (UserService.UserExistsException ex) {
             service.loadUserByUsername(user.getUsername());
             logger.warn("Próbowano zarejestrować już istniejącego użytkownika: {}", user.getUsername());
-            bindingResult.rejectValue("username", "already.exists");
+            bindingResult.rejectValue("username", "already.exists","Użytkownik o podanej nazwie istnieje");
             return new ModelAndView("registration");
         }
     }
@@ -68,7 +65,10 @@ public class WebController {
     }
 
     @RequestMapping("/login")
-    public String getLoginPage(){
+    public String getLoginPage(@RequestParam(value = "error", required = false) String error, Model model){
+        if (error != null) {
+            model.addAttribute("loginError", "Wystąpił problem podczas logowania");
+        }
         return "login";
     }
 

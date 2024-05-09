@@ -16,22 +16,19 @@
 
 <main>
     <div th:object="${user}">
-
-        <p>
+        <div class="container">
+        <h2>
             Cześć, <span class="username" th:text="${user.name}"></span>. To jest twoja strona domowa.
             Możesz ją zobaczyć tylko wtedy, gdy jesteś zalogowany.
-        </p>
+        </h2>
 
         <p>
             <img src="/images/unhackeable.jpeg" alt=""/>
         </p>
-
-        <ul>
-            <li>
-                <a href="/logout">Wyloguj się</a>
-            </li>
-        </ul>
-
+        <div class="buttons">
+                <a href="/logout" class="button">Wyloguj się</a>
+        </div>
+        </div>
     </div>
 </main>
 

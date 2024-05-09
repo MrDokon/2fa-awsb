@@ -15,13 +15,15 @@
 </header>
 
 <main>
+    <div class="container">
     Cześć <span class="username" th:text="${user.username}"></span>, dziękujemy za utworzenie konta!
 
     <p>Zeskanuj kod, aby dodać witrynę do swojej aplikacji uwierzytelniającej (np. Ms Authenticator. Będziesz potrzebował kodu do zalogowania się</p>
-        <p><img th:src="${qrCode}" alt="my img"/></p>
-    <ul>
-        <li><a href="/login">log in</a></li>
-    </ul>
+        <p><img th:src="${qrCode}" alt="my img" class="center"/></p>
+        <div class="buttons">
+        <a href="/login" class="button">Zaloguj się</a>
+        </div>
+    </div>
 </main>
 
 <footer>

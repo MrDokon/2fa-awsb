@@ -13,11 +13,11 @@ public class User {
     private long id;
 
     @NotNull
-    @NotEmpty
+    @NotEmpty(message = "{username.notempty}")
     private String username;
 
     @NotNull
-    @NotEmpty
+    @NotEmpty(message = "{password.notempty}")
     private String password;
 
     @Column(name = "two_factor_auth_key")

@@ -24,6 +24,11 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
+
 header {
   background-color: #f8f9fa;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -104,4 +109,46 @@ footer {
   text-align: center;
   padding: 1em 0;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-top: 5px solid #077b8a;
+  border-bottom: 5px solid #077b8a;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 10px 0;
+  white-space: nowrap;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #077b8a;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #055c67;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

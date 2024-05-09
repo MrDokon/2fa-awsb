@@ -43,6 +43,7 @@ public class AuthDetailsProvider extends DaoAuthenticationProvider {
 
                 if (!authToken.equals(userLoginDetails.getUser2FaCode())) {
                     throw new BadCredentialsException("Wprowadzony kod logowania jest niepoprawny");
+
                 }
             } catch (IOException | InvalidKeyException | NoSuchAlgorithmException  e) {
                 logger.warn("Wystąpił problem podczas logowania" );
